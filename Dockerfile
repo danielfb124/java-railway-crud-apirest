@@ -5,6 +5,8 @@ COPY . /app
 WORKDIR /app
 
 RUN chmod +x mvnw
+RUN chmod +x src/app.js
+
 RUN ./mvnw package -DskipTest
 RUN mv -f target/*.jar app.jar
 
