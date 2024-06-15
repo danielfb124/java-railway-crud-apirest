@@ -1,4 +1,4 @@
-FROM eclipse-temurin:22-jdk as build
+FROM eclipse-temurin:21-jdk as build
 
 
 COPY . /app
@@ -8,7 +8,7 @@ RUN chmod +x mvnw
 RUN ./mvnw package -DskipTest
 RUN mv -f target/*.jar app.jar
 
-FROM eclipse-temurin:22-jre
+FROM eclipse-temurin:21-jre
 
 ARG PORT
 ENV PORT=${PORT}
